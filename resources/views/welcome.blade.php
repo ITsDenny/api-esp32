@@ -1,5 +1,5 @@
 @include('partials.header')
-<div class="bg-[url('{{ url('/img/bg-web-esp32.jpg') }}')] w-screen h-screen bg-no-repeat bg-cover flex text-white">
+<div class="bg-[url('../img/bg-web-esp32.jpg')] w-screen h-screen bg-no-repeat bg-cover flex text-white">
     <div class="flex w-2/12 p-2 justify-center items-center">
         <div class="flex flex-col gap-12">
             <div class="bg-white rounded-full flex justify-center items-center p-2">
