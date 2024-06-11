@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(WebLoginController::class)->group(function () {
+    Route::get('/admin/dashboard', 'dashboard')->middleware('isLoggedIn');
+    Route::get('/admin/login', 'showLoginForm')->middleware('alreadyLoggedIn');
+    Route::post('/login-admin', 'login')->name('login-admin');
+    Route::get('/admin/logout', 'logout');
 });

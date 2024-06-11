@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AlreadyLoggedIn;
+use App\Http\Middleware\AuthCheck;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -40,11 +42,16 @@ class Kernel extends HttpKernel
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
 
+
+    protected $routeMiddleware = [
+        'isLoggedIn' => AuthCheck::class,
+        'alreadyLoggedIn' => AlreadyLoggedIn::class
+    ];
     /**
      * The application's middleware aliases.
      *
