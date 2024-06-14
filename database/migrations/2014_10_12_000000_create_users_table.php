@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('no_hp');
+            $table->string('jobs');
+            $table->string('address');
+            $table->string('profile_pict')->nullable();
+            $table->boolean('is_admin', true)->nullable();
             $table->timestamps();
         });
     }
