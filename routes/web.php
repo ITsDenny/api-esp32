@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebAdminAttendanceController;
 use App\Http\Controllers\WebLoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,8 @@ Route::controller(WebLoginController::class)->group(function () {
     Route::get('/admin/login', 'showLoginForm')->middleware('alreadyLoggedIn');
     Route::post('/login-admin', 'login')->name('login-admin');
     Route::get('/admin/logout', 'logout');
+});
+
+Route::middleware('isLoggedIn')->controller(WebAdminAttendanceController::class)->group(function () {
+    Route::get('/admin/attendance', 'getAllAttendances');
 });

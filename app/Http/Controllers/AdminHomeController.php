@@ -9,4 +9,8 @@ class AdminHomeController extends Controller
     public function home()
     {
     }
+
+    public function getAttendance()
+    {
+    }
 }
