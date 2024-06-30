@@ -28,4 +28,5 @@ Route::controller(WebLoginController::class)->group(function () {
 
 Route::middleware('isLoggedIn')->controller(WebAdminAttendanceController::class)->group(function () {
     Route::get('/admin/attendance', 'getAllAttendances');
+    Route::get('/admin/attendance/search', 'getSpecificAttendanceDate');
 });
