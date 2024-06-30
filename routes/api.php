@@ -24,9 +24,15 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->controller(AuthController::class)->group(function () {
         Route::post('login', 'apiLogin');
+        Route::post('register', 'apiRegister');
     });
 
     Route::middleware('auth:sanctum')->group(function () {
+
+        Route::prefix('user')->controller(AuthController::class)->group(function () {
+            Route::post('update-password', 'apiUpdatePassword');
+        });
+
         Route::prefix('attendance')->controller(AttendanceController::class)->group(function () {
             Route::post('clock-in', 'clockIn');
             Route::post('clock-out', 'clockOut');
