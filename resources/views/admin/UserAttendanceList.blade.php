@@ -3,7 +3,7 @@
 <div class="flex flex-col justify-center items-center">
     <div class="flex-1">
         <table class="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead class="text-md text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">User</th>
                     <th scope="col" class="px-6 py-3">Date</th>
