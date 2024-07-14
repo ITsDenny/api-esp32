@@ -37,5 +37,7 @@ class UserController extends Controller
             'is_admin' => $isAdmin,
             'profile_pict' => $request->input('profile_pict')
         ]);
+
+        $user->save();
     }
 }
