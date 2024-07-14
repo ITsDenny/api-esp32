@@ -43,6 +43,11 @@ class ApiAuthService
                 'message' => 'Login successful.'
             ],
             'data' => [
+                'name' => $user->name,
+                'jobs' => $user->jobs,
+                'address' => $user->address,
+                'no_hp' => $user->no_hp,
+                'profile_pict' => $user->profile_pict,
                 'access_token' => $token,
             ]
         ], 200);
